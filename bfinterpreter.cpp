@@ -4,19 +4,26 @@
 
 int main(int argc, char *argv[])
 {
-    // This program requires 2 arguments
-    if (argc != 3) {
-        std::cerr << "Please specify (in this order):" << std::endl;
-        std::cerr << " - amount of memory to be allocated" << std::endl;
-        std::cerr << " - file containing BF code" << std::endl;
+    unsigned int mem_alloc_size = 0;
+
+    if (argc == 2) {
+        mem_alloc_size = 30000;
+        // if no memory size is specified,
+        // sets the de fault to 30000 bytes
+    } else if (argc == 3) {
+        mem_alloc_size = atoi(argv[2]);
+        // amount of memory specified
+    } else {
+        std::cerr << "Usage: ";
+        std::cerr << argv[0] << " [file name] " << "[OPTIONAL: amount of memory to allocate]" << std::endl;
         return EXIT_FAILURE;
     }
 
     // Trying to open the file containing the code
     std::ifstream file;
-    file.open(argv[2]);
+    file.open(argv[1]);
     if (!file) {
-        std::cerr << "Unable to open " << argv[2] << std::endl;
+        std::cerr << "Unable to open " << argv[1] << std::endl;
         return EXIT_FAILURE;
     }
 
@@ -28,8 +35,7 @@ int main(int argc, char *argv[])
     }
     file.close();
 
-    unsigned int mem_alloc_size = atoi(argv[1]);
-    u_int8_t* mem = (u_int8_t*)calloc(mem_alloc_size, 1);
+    u_int8_t* mem = (u_int8_t*)calloc(mem_alloc_size, sizeof(u_int8_t));
     // 1 byte * amount of mem to alloc
     u_int8_t* currMem = mem;
 

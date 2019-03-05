@@ -18,7 +18,7 @@ After building the program, you can specify two arguments to the executable:
 * (OPTIONAL) The amount (in bytes) of memory to be allocated
   
 Example:  
-```./bf-interpreter.out program.bf    # allocates the default of 30000 bytes of memory```  
-```./bf-interpreter.out program.bf 50 # allocates 50 bytes of memory```  
+```./bfinterpreter.out program.bf    # allocates the default of 30000 bytes of memory```  
+```./bfinterpreter.out program.bf 50 # allocates 50 bytes of memory```  
 
 A file containing an example Hello World is included in the repository.

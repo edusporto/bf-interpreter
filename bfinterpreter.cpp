@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     if (argc == 2) {
         mem_alloc_size = 30000;
         // if no memory size is specified,
-        // sets the de fault to 30000 bytes
+        // sets the default to 30000 bytes
     } else if (argc == 3) {
         mem_alloc_size = atoi(argv[2]);
         // amount of memory specified

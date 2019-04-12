@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <stack>
+#include <cstdint>
 
 int main(int argc, char *argv[])
 {
@@ -35,9 +36,9 @@ int main(int argc, char *argv[])
     }
     file.close();
 
-    u_int8_t* mem = (u_int8_t*)calloc(mem_alloc_size, sizeof(u_int8_t));
+    uint8_t* mem = (uint8_t*)calloc(mem_alloc_size, sizeof(uint8_t));
     // 1 byte * amount of mem to alloc
-    u_int8_t* currMem = mem;
+    uint8_t* currMem = mem;
 
     if (mem == NULL) {
         std::cerr << "Unable to alocate memory." << std::endl;

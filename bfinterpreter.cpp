@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     uint8_t* currMem = mem;
 
     if (mem == NULL) {
-        std::cerr << "Unable to alocate memory." << std::endl;
+        std::cerr << "Unable to allocate memory." << std::endl;
         return EXIT_FAILURE;
     }
 

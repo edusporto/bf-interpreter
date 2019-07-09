@@ -1,5 +1,5 @@
 # bf-interpreter
-Interpreter for the "Brainfuck" language written in C++
+Interpreter for the "Brainf*ck" language written in C++
 
 ## About
 This program assumes blocks of memory of 8 bits each. In the future, support for multiple 
